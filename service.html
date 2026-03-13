@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ═══════════════════════════════════════
+       ESSENTIAL / CHARSET & VIEWPORT
+  ═══════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ═══════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ═══════════════════════════════════════ -->
+  <title>Professional Web Services | SEO, Security & Development | Portfolio</title>
+  <meta name="title"       content="Professional Web Services | SEO, Security & Development | Portfolio" />
+  <meta name="description" content="Explore our expert web services — SEO optimization, 24/7 customer support, web protection, icon design, customer care, and full-stack website development. Let's build your digital presence." />
+  <meta name="keywords"    content="web services, SEO optimization, website development, web protection, customer support, 24/7 support, icon design, font awesome, portfolio, digital services" />
+  <meta name="author"      content="Portfolio — Your Name" />
+  <meta name="robots"      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="language"    content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="rating"      content="general" />
+
+  <!-- ═══════════════════════════════════════
+       CANONICAL URL  (update to your domain)
+  ═══════════════════════════════════════ -->
+  <link rel="canonical" href="https://yourportfolio.com/service.html" />
+
+  <!-- ═══════════════════════════════════════
+       OPEN GRAPH  (Facebook / LinkedIn / WhatsApp)
+  ═══════════════════════════════════════ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourportfolio.com/service.html" />
+  <meta property="og:title"       content="Professional Web Services | Portfolio" />
+  <meta property="og:description" content="From SEO to full-stack development — discover the services that power great digital experiences." />
+  <meta property="og:image"       content="https://yourportfolio.com/assets/og-services.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"   content="Portfolio Web Services Overview" />
+  <meta property="og:site_name"   content="Portfolio" />
+  <meta property="og:locale"      content="en_US" />
+
+  <!-- ═══════════════════════════════════════
+       TWITTER / X CARD
+  ═══════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://yourportfolio.com/service.html" />
+  <meta name="twitter:title"       content="Professional Web Services | Portfolio" />
+  <meta name="twitter:description" content="From SEO to full-stack development — discover the services that power great digital experiences." />
+  <meta name="twitter:image"       content="https://yourportfolio.com/assets/og-services.png" />
+  <meta name="twitter:image:alt"   content="Portfolio Web Services Overview" />
+  <meta name="twitter:site"        content="@yourhandle" />
+  <meta name="twitter:creator"     content="@yourhandle" />
+
+  <!-- ═══════════════════════════════════════
+       STRUCTURED DATA — JSON-LD (Google Rich Results)
+  ═══════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Portfolio Web Services",
+    "url": "https://yourportfolio.com/service.html",
+    "logo": "https://yourportfolio.com/logo.png",
+    "description": "Professional web services including SEO, web protection, customer care, icon design, and full-stack website development.",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "SEO Optimization" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "24/7 Customer Support" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Icon & Font Design" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Web Protection" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Customer Care" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Website Development" }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════
+       PERFORMANCE — PRECONNECT / DNS-PREFETCH
+  ═══════════════════════════════════════ -->
+  <link rel="preconnect"    href="https://unpkg.com" />
+  <link rel="dns-prefetch"  href="https://unpkg.com" />
+  <link rel="preconnect"    href="https://kit.fontawesome.com" />
+  <link rel="dns-prefetch"  href="https://kit.fontawesome.com" />
+
+  <!-- ═══════════════════════════════════════
+       FAVICON & TOUCH ICONS
+  ═══════════════════════════════════════ -->
+  <link rel="icon"              type="image/x-icon"   href="logo.png" />
+  <link rel="apple-touch-icon"  sizes="180x180"        href="logo.png" />
+  <link rel="icon"              type="image/png" sizes="32x32" href="logo.png" />
+  <link rel="icon"              type="image/png" sizes="16x16" href="logo.png" />
+
+  <!-- ═══════════════════════════════════════
+       STYLESHEETS
+  ═══════════════════════════════════════ -->
+  <link rel="stylesheet" href="service.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome (loaded async for performance) -->
+  <script src="https://kit.fontawesome.com/83e7cded3a.js" crossorigin="anonymous" defer></script>
+
+</head>
+<body>
+
+  <!-- ═══════════════════════════
+       NAVBAR
+  ═══════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo">Port<span>folio</span></a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="service.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+       <!-- <li><a href="#" class="btn-signup">Sign Up</a></li>-->
+      </ul>
+
+      <!-- Right Controls -->
+      <div class="right-controls">
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-toggle-wrap" id="themeToggleWrap" title="Toggle Dark / Light mode">
+          <div class="toggle-btn" id="toggleBtn">
+            <div class="toggle-thumb" id="toggleThumb">
+              <span class="icon-sun">☀️</span>
+              <span class="icon-moon">🌙</span>
+            </div>
+          </div>
+          <span class="mode-label" id="modeLabel">LIGHT</span>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div><!-- /right-controls -->
+    </div><!-- /nav-inner -->
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="service.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!--<li><a href="#" class="btn-signup">Sign Up</a></li>-->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════
+       SERVICES SECTION
+  ═══════════════════════════ -->
+  <main>
+    <section class="services">
+
+      <div class="services-header">
+        <h1>Our Services</h1>
+        <p class="para1">
+          Web services are searched for over the network and called upon accordingly.
+          When a web service is invoked, it provides powerful operations for the requesting client.
+        </p>
+      </div>
+
+      <div class="container">
+
+        <!-- SEO -->
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="details">
+            <h3>SEO</h3>
+            <p><span>SEO stands for Search Engine Optimization.</span> Practitioners optimize websites
+              and content to rank higher in search engines like Google.</p>
+          </div>
+        </div>
+
+        <!-- 24/7 Support -->
+        <div class="box">
+          <div class="icon">
+            <i class="bx bx-chat"></i>
+          </div>
+          <div class="details">
+            <h3>24/7 Available</h3>
+            <p>Customers can get help and find answers as soon as questions arise —
+              around the clock, in real-time.</p>
+          </div>
+        </div>
+
+        <!-- Font Awesome -->
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-font-awesome"></i>
+          </div>
+          <div class="details">
+            <h3>Icon & Font Design</h3>
+            <p>Font Awesome sets just the basic styling rules icons need to render
+              properly in any context — clean, scalable, and consistent.</p>
+          </div>
+        </div>
+
+        <!-- Web Protection -->
+        <div class="box">
+          <div class="icon">
+            <i class="bx bx-check-shield"></i>
+          </div>
+          <div class="details">
+            <h3>Web Protection</h3>
+            <p>Blocks malware, viruses, ransomware, and spy apps so you stay fully
+              protected while browsing, shopping, or gaming without interruptions.</p>
+          </div>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="box">
+          <div class="icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="details">
+            <h3>Customer Care</h3>
+            <p>Investing in customer care builds lasting brand loyalty and boosts
+              satisfaction at every touchpoint of the journey.</p>
+          </div>
+        </div>
+
+        <!-- Website Development -->
+        <div class="box">
+          <div class="icon">
+            <i class="fa-brands fa-wordpress"></i>
+          </div>
+          <div class="details">
+            <h3>Website Development</h3>
+            <p>From coding to technical design — we build fast, beautiful websites
+              and applications tailored to your exact needs.</p>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">
+      <span class="logo-box">NIKHIL</span>
+      <span>S</span>
+    </div>
+   <!-- <p></p>
+    <div class="app-badges">
+      <div class="badge">🍎</div>
+      <div class="badge">▶</div>
+      <div class="badge">🏪</div>
+    </div>-->
+  </div>
+
+  <div class="footer-col">
+    <h4>Other Pages</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About Us</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="policy.html">Privacy Policy</a></li>
+      <li><a href="term.html">Term Of Service</a></li>
+      <li><a href="#disclaimer.html">Disclaimer</a></li>
+      <li><a href="#credits.html">Credits</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col footer-social">
+    <h4>Social Media</h4>
+    <p>Our Support and Sales team is available 24/7 to answer your queries</p>
+    <div class="social-icons">
+      <a href="https://github.com/Nikhil6306">f</a>
+      <a href="https://x.com/NIKHILS7179">𝕏</a>
+      <a href="www.linkedin.com/in/nikhil-kumar-shukla-8b3b11275">in</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- ═══════════════════════════
+       SCRIPTS
+  ═══════════════════════════ 
+  <script src="service.js" defer></script>-->
+  
+  <script>
+    /* ═══════════════════════════════════════
+   service.js  —  Portfolio Services Page
+═══════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ─────────────────────────────────────
+     1. DARK MODE TOGGLE
+  ───────────────────────────────────── */
+  const themeToggleWrap = document.getElementById('themeToggleWrap');
+  const modeLabel       = document.getElementById('modeLabel');
+
+  // Persist preference across page reloads
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    modeLabel.textContent = 'DARK';
+  }
+
+  themeToggleWrap.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-mode');
+    modeLabel.textContent = isDark ? 'DARK' : 'LIGHT';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+
+  /* ─────────────────────────────────────
+     2. HAMBURGER / MOBILE MENU
+  ───────────────────────────────────── */
+  const hamburger  = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close menu when any mobile link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobileMenu();
+    }
+  });
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+
+  /* ─────────────────────────────────────
+     3. NAVBAR SCROLL SHADOW
+  ───────────────────────────────────── */
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+
+  /* ─────────────────────────────────────
+     4. SERVICE CARDS — SCROLL FADE-IN
+  ───────────────────────────────────── */
+  const cards = document.querySelectorAll('.box');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger each card slightly
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => observer.observe(card));
+
+});
+
+  </script>
+</body>
+</html>

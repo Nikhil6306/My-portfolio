@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── THEME VARIABLES ─── */
+
+
+
+    :root {
+      --body-bg:    linear-gradient(135deg, #ffffff 0%, #ffffff 45%, #ffffff 100%);
+      --nav-bg:     #9887ee;
+      --nav-border: rgba(44, 43, 43, 0.15);
+      --mobile-bg:  rgba(12, 32, 52, 0.97);
+      --hero-title: #ffffff;
+      --hero-sub:   rgba(255,255,255,0.65);
+      --blob1: #5ba3d9;
+      --blob2: #a8d8f0;
+      --toggle-track: rgba(255,255,255,0.18);
+      --toggle-border: rgba(255,255,255,0.35);
+      --toggle-thumb: #fff;
+      /*================
+     footer-root
+     ================*/
+     --dark: #0d0d1a;
+    --dark2: #111128;
+    --card: #15152e;
+    --purple: #6c5ce7;
+    --purple-light: #7d6ff0;
+    --accent: #5a4bd1;
+    --text: #ffffff;
+    --muted: #a0a0c0;
+    --border: rgba(108,92,231,0.3);
+    --footer-bg: #0d0d1a;
+    --input-border: rgba(255,255,255,0.15);
+    --input-color: #a0a0c0;
+    }
+    .dark-mode {
+      --body-bg:    linear-gradient(135deg, #000000 0%, #000000 45%, #000000 100%);
+      --nav-bg:     rgba(101, 34, 168);
+      --nav-border: rgba(255,255,255,0.07);
+      --mobile-bg:  rgba(4, 10, 18, 0.98);
+      --hero-title: #c8e6ff;
+      --hero-sub:   rgba(180,215,255,0.55);
+      --blob1: #1a3d5c;
+      --blob2: #1e4d70;
+      --toggle-track: rgba(20, 60, 100, 0.85);
+      --toggle-border: rgba(91,196,245,0.6);
+      --toggle-thumb: #0a2040;
+      --footer-bg: #0d0d1a;
+    }
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-box {
+    background: var(--purple);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-weight: 800;
+  }
+
+
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--body-bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.4s ease;
+    }
+
+    /* Background blobs */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+      transition: background 0.4s;
+    }
+    body::before { width: 520px; height: 520px; background: var(--blob1); top: -120px; right: 8%; }
+    body::after  { width: 420px; height: 420px; background: var(--blob2); bottom: 8%; left: 4%; }
+
+    /* ═══════════════════
+       NAVBAR
+    ═══════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(22px) saturate(170%);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      border-bottom: 1px solid var(--nav-border);
+      box-shadow: 0 4px 36px rgba(0,0,0,0.35);
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .nav-inner {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* ── Logo ── */
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      text-shadow: 0 0 18px rgba(255, 255, 255, 0.3);
+      transition: text-shadow 0.3s;
+    }
+    .logo:hover { text-shadow: 0 0 48px #cb0e0e, 0 0 28px rgba(255, 255, 255, 0.65); }
+    .logo span { color: #ffffff; }
+
+    /* ── Nav Links ── */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 0.45rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 7px;
+      position: relative;
+      transition: background 0.22s, text-shadow 0.22s;
+    }
+
+    /* Glowing underline */
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 5px; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      box-shadow: 0 0 8px #fff, 0 0 16px rgba(255,255,255,0.7);
+      transition: width 0.25s ease;
+    }
+
+    /* ✨ WHITE GLOW HOVER */
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.1);
+      text-shadow:
+        0 0 6px #ffffff,
+        0 0 16px rgba(255,255,255,0.95),
+        0 0 36px rgba(255,255,255,0.5);
+    }
+    .nav-links a:hover::after { width: 65%; }
+
+    .nav-links a.active {
+      background: rgba(255,255,255,0.12);
+      text-shadow: 0 0 8px rgba(255,255,255,0.7);
+    }
+    .nav-links a.active::after { width: 65%; }
+
+    /* ── Sign Up button ── */
+    .btn-signup {
+      padding: 0.48rem 1.35rem !important;
+      background: linear-gradient(135deg, #0f61cd 0%, #0e2ea3 55%, #1562c7 100%) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      border-radius: 999px !important;
+      box-shadow: 0 3px 16px rgba(255, 255, 255, 0.55) !important;
+      transition: transform 0.22s, box-shadow 0.22s, filter 0.22s !important;
+      text-shadow: none !important;
+    }
+    .btn-signup:hover {
+      transform: translateY(-2px) scale(1.05) !important;
+      box-shadow: 0 8px 28px rgba(50, 76, 245, 0.75) !important;
+      filter: brightness(1.12) !important;
+      background: linear-gradient(135deg,#cabec4,#ffffff 55%,#d7c7c7) !important;
+      text-shadow: none !important;
+      color: #04090f !important;
+    }
+    .btn-signup::after { display: none !important; }
+
+    /* ═══════════════════
+       RIGHT CONTROLS
+    ═══════════════════ */
+    .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Dark Mode Toggle ── */
+    .dark-toggle-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .toggle-btn {
+      position: relative;
+      width: 58px;
+      height: 30px;
+      background: var(--toggle-track);
+      border: 1.5px solid var(--toggle-border);
+      border-radius: 999px;
+      transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .toggle-btn:hover {
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.15);
+    }
+    .dark-mode .toggle-btn {
+      box-shadow: inset 0 0 10px rgba(91,196,245,0.2), 0 0 14px rgba(91,196,245,0.3);
+    }
+
+    /* Stars inside track (dark mode) */
+    .toggle-btn::before {
+      content: '★ ★';
+      position: absolute;
+      right: 6px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 7px;
+      color: rgba(255,255,255,0);
+      transition: color 0.4s;
+      letter-spacing: 2px;
+    }
+    .dark-mode .toggle-btn::before { color: rgba(255,255,255,0.4); }
+
+    /* Thumb */
+    .toggle-thumb {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 22px; height: 22px;
+      background: var(--toggle-thumb);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      transition: transform 0.38s cubic-bezier(.34,1.56,.64,1), background 0.38s;
+      pointer-events: none;
+    }
+    .dark-mode .toggle-thumb { transform: translateX(28px); }
+
+    .icon-sun  { transition: opacity 0.25s; }
+    .icon-moon { position: absolute; opacity: 0; transition: opacity 0.25s; }
+    .dark-mode .icon-sun  { opacity: 0; }
+    .dark-mode .icon-moon { opacity: 1; }
+
+    .mode-label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.35s;
+    }
+    .dark-mode .mode-label { color: rgba(91,196,245,0.85); }
+
+
+       /* FOOTER */
+  footer {
+    background: var(--footer-bg);
+    padding: 50px 60px 30px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    transition: background 0.3s;
+  }
+
+  .footer-brand p {
+    color: var(--muted);
+    font-size: 0.82rem;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    max-width: 200px;
+  }
+
+  .app-badges {
+    display: flex;
+    gap: 10px;
+  }
+
+  .badge {
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .footer-col h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--purple-light);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li:hover { color: var(--text); }
+
+  .footer-col ul li a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s, padding-left 0.2s;
+    display: inline-block;
+  }
+
+  .footer-col ul li a:hover {
+    color: var(--purple-light);
+    padding-left: 6px;
+  }
+
+  .footer-social p {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+  }
+
+  .social-icons a:hover { color: var(--text); border-color: var(--purple); 
+}
+
+    </style>
+</head>
+<body id="mainBody">
+
+  <!-- ✅ FIXED: nav structure corrected -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo">Port<span>folio</span></a>
+
+      <!-- Center: Desktop links -->
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="portfolio.html">Projects</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact .html">Contact</a></li>
+        <!--<li><a href="#" class="btn-signup">Sign Up</a></li>-->
+      </ul>
+
+      <!-- Right Controls -->
+      <div class="right-controls">
+
+        <!-- ☀️🌙 Dark Mode Toggle -->
+        <div class="dark-toggle-wrap" id="themeToggleWrap" title="Toggle Dark / Light mode">
+          <div class="toggle-btn" id="toggleBtn">
+            <div class="toggle-thumb" id="toggleThumb">
+              <span class="icon-sun">☀️</span>
+              <span class="icon-moon">🌙</span>
+            </div>
+          </div>
+          <span class="mode-label" id="modeLabel">LIGHT</span>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+       </button>
+     </div><!-- /.right-controls -->
+   </div><!-- /.nav-inner -->
+ </nav>
+ <!-- Mobile dropdown -->
+ <div class="mobile-menu" id="mobileMenu">
+   <a href="#" class="active">Home</a>
+   <a href="About.html">About</a>
+   <a href="project.html">Projects</a>
+   <a href="service.html">Services</a>
+   <a href="contact .html">Contact</a>
+   <!--<a href="#" class="btn-signup">Sign Up</a>-->
+ </div>
+ 
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">
+      <span class="logo-box">NIKHIL</span>
+      <span>S</span>
+    </div>
+  </div>
+
+  <div class="footer-col">
+    <h4>Other Pages</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact .html">Contact</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="policy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Term Of Service</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="FAQ.html">FAQ</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col footer-social">
+    <h4>Social Media</h4>
+    <p>Our Support and Sales team is available 24/7 to answer your queries</p>
+    <div class="social-icons">
+      <a href="https://github.com/Nikhil6306">f</a>
+      <a href="https://x.com/NIKHILS7179">𝕏</a>
+      <a href="https://www.linkedin.com/in/nikhil-kumar-shukla-8b3b11275/">in</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
